@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Course; // Corrected namespace
+use App\Models\Course; 
 use App\Models\Module;
 use App\Models\Content;
 
@@ -50,11 +50,11 @@ class CourseController extends Controller
         }
     }
 
-    // Redirect to welcome page (home) with success message
+   
     return redirect()->route('welcome')->with('success', 'Course Created Successfully');
 }
 
-    // 🔹 Add show method
+   
     public function show($id)
     {
         $course = Course::with('modules.contents')->findOrFail($id);
